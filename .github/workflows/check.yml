@@ -1,0 +1,31 @@
+name: Status checks
+# Checks every site every 10 minutes and commits data/. GitHub delays scheduled runs by hours, so each run loops for
+# ~5.6 h and then dispatches the next one itself (GITHUB_TOKEN may trigger workflow_dispatch). The schedule is a backstop.
+on:
+  schedule: [{ cron: '7 */3 * * *' }]
+  workflow_dispatch:
+permissions: { contents: write, actions: write }
+concurrency: { group: status-checks, cancel-in-progress: false }
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Check every 10 minutes
+        run: |
+          git config user.name "status-bot" && git config user.email "status-bot@users.noreply.github.com"
+          end=$((SECONDS + 20100))
+          while [ $SECONDS -lt $end ]; do
+            git pull -q --rebase || true
+            node scripts/check.mjs || true
+            git add data && git commit -qm "Status check $(date -u +%H:%MZ) [skip ci]" && (git push -q || (git pull -q --rebase && git push -q)) || true
+            sleep 600
+          done
+      - name: Hand over to the next run
+        if: ${{ !cancelled() }}
+        run: |
+          curl -sS -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/check.yml/dispatches" -d '{"ref":"main"}'
