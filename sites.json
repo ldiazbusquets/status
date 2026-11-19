@@ -1,20 +1,86 @@
 {
   "sites": [
-    { "id": "home", "name": "Personal site", "group": "Websites", "url": "https://ldiazbusquets.github.io/" },
-    { "id": "finance", "name": "Finance", "group": "Websites", "url": "https://ldiazbusquets.github.io/finance/" },
-    { "id": "lab", "name": "Lab", "group": "Websites", "url": "https://ldiazbusquets.github.io/lab/" },
-    { "id": "health", "name": "Health", "group": "Websites", "url": "https://ldiazbusquets.github.io/health/" },
-    { "id": "parallax", "name": "Parallax", "group": "Apps", "url": "https://ldiazbusquets.github.io/parallax/" },
-    { "id": "terminal", "name": "AI Terminal", "group": "Apps", "url": "https://ldiazbusquets.github.io/terminal/" },
-    { "id": "linux", "name": "Linux", "group": "Apps", "url": "https://ldiazbusquets.github.io/linux/" },
-    { "id": "os", "name": "OS", "group": "Apps", "url": "https://ldiazbusquets.github.io/os/" },
-    { "id": "remote", "name": "LDB Remote", "group": "Apps", "url": "https://ldiazbusquets.github.io/remote/" },
-    { "id": "archway", "name": "Archway Macro Monitor", "group": "Class projects", "url": "https://ldiazbusquets.github.io/archway-macro/" },
-    { "id": "bankscope", "name": "BankScope AI", "group": "Class projects", "url": "https://ldiazbusquets.github.io/bankscope-ai/" },
-    { "id": "retire", "name": "Retirement Simulator", "group": "Class projects", "url": "https://ldiazbusquets.github.io/retirement-sim/" }
+    {
+      "id": "home",
+      "name": "Personal site",
+      "group": "Websites",
+      "url": "https://ldiazbusquets.github.io/"
+    },
+    {
+      "id": "finance",
+      "name": "Finance",
+      "group": "Websites",
+      "url": "https://ldiazbusquets.github.io/finance/"
+    },
+    {
+      "id": "lab",
+      "name": "Lab",
+      "group": "Websites",
+      "url": "https://ldiazbusquets.github.io/lab/"
+    },
+    {
+      "id": "health",
+      "name": "Health",
+      "group": "Websites",
+      "url": "https://ldiazbusquets.github.io/health/"
+    },
+    {
+      "id": "parallax",
+      "name": "Parallax",
+      "group": "Apps",
+      "url": "https://ldiazbusquets.github.io/parallax/"
+    },
+    {
+      "id": "terminal",
+      "name": "AI Terminal",
+      "group": "Apps",
+      "url": "https://ldiazbusquets.github.io/terminal/"
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "group": "Apps",
+      "url": "https://ldiazbusquets.github.io/linux/"
+    },
+    {
+      "id": "os",
+      "name": "OS",
+      "group": "Apps",
+      "url": "https://ldiazbusquets.github.io/os/"
+    },
+    {
+      "id": "archway",
+      "name": "Archway Macro Monitor",
+      "group": "Class projects",
+      "url": "https://ldiazbusquets.github.io/archway-macro/"
+    },
+    {
+      "id": "bankscope",
+      "name": "BankScope AI",
+      "group": "Class projects",
+      "url": "https://ldiazbusquets.github.io/bankscope-ai/"
+    },
+    {
+      "id": "retire",
+      "name": "Retirement Simulator",
+      "group": "Class projects",
+      "url": "https://ldiazbusquets.github.io/retirement-sim/"
+    }
   ],
   "data": [
-    { "id": "px-markets", "name": "Parallax market data", "note": "snapshots rebuilt every ~15 minutes", "url": "https://ldiazbusquets.github.io/parallax/snap/curves.json", "maxAgeMin": 60 },
-    { "id": "px-flights", "name": "Parallax live flights", "note": "military and cargo aircraft, every few minutes", "url": "https://raw.githubusercontent.com/ldiazbusquets/parallax/flights/mil.json", "maxAgeMin": 20 }
+    {
+      "id": "px-markets",
+      "name": "Parallax market data",
+      "note": "snapshots rebuilt every ~15 minutes",
+      "url": "https://ldiazbusquets.github.io/parallax/snap/curves.json",
+      "maxAgeMin": 60
+    },
+    {
+      "id": "px-flights",
+      "name": "Parallax live flights",
+      "note": "military and cargo aircraft, every few minutes",
+      "url": "https://raw.githubusercontent.com/ldiazbusquets/parallax/flights/mil.json",
+      "maxAgeMin": 20
+    }
   ]
 }
